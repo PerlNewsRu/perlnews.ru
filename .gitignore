@@ -1,0 +1,4 @@
+/build
+/static/google*
+/static/yandex*
+.*.swp

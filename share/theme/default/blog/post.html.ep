@@ -1,0 +1,66 @@
+<div class="row">
+
+    <div class="nine columns">
+        <main>
+            <header>
+                <h1><%= $self->title %></h1>
+                <p class="tags">Темы:
+                % for my $tag ( $self->tags ) {
+                    <a href="<%= $tag->href %>" rel="tag"><%= $tag->text %></a>
+                % }
+                </p>
+                <aside>
+                    <p><time datetime="<%= $self->published->strftime('%Y-%m-%d') %>">
+                        <span class="typcn typcn-time"><span>
+                        <%= $self->published->strftime('%Y-%m-%d') %>
+                    </time>
+                    % if ( $self->author ) {
+                        <span class="typcn typcn-user"><span>
+                        <%= $self->author %>
+                    % }
+                    </p>
+                </aside>
+                % if ( $self->links( 'crosspost' ) ) {
+                <p>Originally posted as:
+                    % for my $link ( $self->links( 'crosspost' ) ) {
+                        <a class="alert-link" href="<%= $link->href %>">
+                            <em><%= $self->title %></em> on <%= $link->title %>.
+                        </a>
+                    % }
+                </p>
+                % }
+            </header>
+            % my @sections = $self->sections;
+            % for my $i ( 0..$#sections ) {
+            <section id="section-<%= $i+1 %>">
+                <%= $sections[$i] %>
+            </section>
+            % }
+        </main>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_shortname = 'perlnewsru';
+            if (window.location.hostname === "perlnews.ru") {
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            }
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    <div class="three columns sidebar">
+        %= include 'site/sidebar_before.html'
+        <nav id="tags">
+            <h1>Темы</h1>
+            <ul class="list-inline">
+            % for my $tag ( $app->tags ) {
+                <li><a href="<%= $tag->href %>"><%= $tag->text %></a></li>
+            % }
+            </ul>
+        </nav>
+    </div>
+
+</div>

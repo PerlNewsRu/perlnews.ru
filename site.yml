@@ -1,0 +1,54 @@
+blog_app:
+    class: Statocles::App::Blog
+    args:
+        url_root: /blog
+        page_size: 20
+        store: 'blog'
+
+plain_app:
+    class: Statocles::App::Plain
+    args:
+        url_root: '/'
+        store: 'plain'
+
+static_app:
+    class: Statocles::App::Static
+    args:
+        url_root: '/'
+        store: 'static'
+
+github_deploy:
+    class: Statocles::Deploy::Git
+    args:
+        path: .
+        branch: gh-pages
+ 
+site:
+    class: Statocles::Site
+    args:
+        theme: 'share/theme/default'
+        apps:
+            blog:
+                $ref: blog_app
+            plain:
+                $ref: plain_app
+            static:
+                $ref: static_app
+        build_store: 'build'
+        base_url: 'http://perlnews.ru'
+        deploy:
+            $ref: github_deploy
+        title: PerlNews.Ru
+        index: blog
+        nav:
+            main:
+                - title: Новости
+                  href: /index.html
+                - title: О блоге
+                  href: /about.html
+                - title: Ресурсы
+                  href: /resources.html
+                - title: Чат
+                  href: http://irc.pragmaticperl.com
+                - title: Twitter
+                  href: https://twitter.com/perlnews_ru

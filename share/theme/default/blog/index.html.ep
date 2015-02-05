@@ -1,0 +1,104 @@
+
+<div class="row">
+
+    <div class="nine columns">
+        <main>
+
+            % for my $page ( @$pages ) {
+            <article>
+                <header>
+                    <h1><a href="<%= $page->path %>"><%= $page->title %></a></h1>
+
+                    <p class="tags">Темы:
+                    % for my $tag ( $page->tags ) {
+                        <a href="<%= $tag->href %>" rel="tag"><%= $tag->text %></a>
+                    % }
+                    </p>
+
+                    <aside>
+                    <p>        
+                        <span class="typcn typcn-time"></span>
+                        <time datetime="<%= $page->published->strftime('%Y-%m-%d') %>">
+                            <%= $page->published->strftime('%Y-%m-%d') %>
+                        </time>
+                        % if ( $page->author ) {
+                            <span class="typcn typcn-user"></span>
+                            <%= $page->author %>
+                        % }
+                        </p>
+                    </aside>
+
+                    % if ( $page->links( 'crosspost' ) ) {
+                    <p>Originally posted as:
+                        % for my $link ( $page->links( 'crosspost' ) ) {
+                            <a href="<%= $link->href %>">
+                                <em><%= $page->title %></em> on <%= $link->title %>.
+                            </a>
+                        % }
+                    </p>
+                    % }
+                </header>
+
+                % my @sections = $page->sections;
+                <%= $sections[0] %>
+
+                % if ( @sections > 1 ) {
+                    <p><a href="<%= $page->path %>#section-2">Дальше &rarr;</a></p>
+                % }
+
+            </article>
+            % }
+        </main>
+
+        <ul class="pager">
+            <li class="prev">
+                <a class="button <%= $self->next ? 'button-primary' : 'disabled' %>"
+                    rel="next" href="<%= $self->next // '' %>"
+                >
+                    <span class="typcn typcn-arrow-left-thick"></span>
+                    Раньше
+                </a>
+            </li>
+            <li class="next">
+                <a class="button <%= $self->prev ? 'button-primary' : 'disabled' %>"
+                    rel="prev" href="<%= $self->prev // '' %>"
+                >
+                    Позже
+                    <span class="typcn typcn-arrow-right-thick"></span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="three columns sidebar">
+        %= include 'site/sidebar_before.html'
+        <h1>Темы</h1>
+        <ul class="list-inline">
+        % for my $tag ( $app->tags ) {
+            <li><a href="<%= $tag->href %>"><%= $tag->text %></a></li>
+        % }
+        </ul>
+        % if ( my @links = $self->links( 'feed' ) ) {
+        <h1>Лента</h1>
+        <ul class="list-inline">
+            % for my $link ( @links ) {
+            <li>
+                <span class="typcn typcn-rss"></span>
+                <a href="<%= $link->href %>" rel="alternate" type="<%= $link->type %>">
+                    <%= $link->text %>
+                </a>
+            </li>
+            % }
+        </ul>
+        % }
+        <h1>СоцСети</h1>
+        <ul class="list-inline">
+            <li>
+                <a href="https://twitter.com/perlnews_ru"><span class="typcn
+                        typcn-social-twitter"></span>PerlNews_RU</a>
+            </li>
+        </ul>
+    </div>
+
+</div>

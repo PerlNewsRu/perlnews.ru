@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="/theme/css/normalize.css" />
+        <link rel="stylesheet" href="/theme/css/skeleton.css" />
+        <link rel="stylesheet" href="/theme/css/statocles-default.css" />
+        <link rel="stylesheet" href="/theme/css/typicons.min.css" />
+        <title><%= $site->title %></title>
+        % for my $link ( $self->links( 'feed' ) ) {
+        <link rel="alternate" href="<%= $link->href %>" type="<%= $link->type %>" />
+        % }
+        %= include 'site/head_after.html'
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <a class="brand" href="/">
+                        <%= $site->title %>
+                        <span class="brand-img"></span>
+                    </a>
+                    % if ( my @nav_links = $site->nav( 'main' ) ) {
+                    <ul>
+                        % for my $nav ( @nav_links ) {
+                        <li>
+                        <a href="<%= $nav->href %>">
+                            <%= $nav->text %>
+                            % if ( $nav->href =~ /^http/ ) {
+                            <span class="typcn typcn-export"></span>
+                            % }
+                        </a>
+                        </li>
+                        % }
+                    </ul>
+                    % }
+                </div>
+            </nav>
+            %= include 'site/header_after.html'
+        </header>
+        <div class="main container">
+            <%= $content %>
+        </div>
+        <footer>
+            %= include 'site/footer.html'
+        </footer>
+    </body>
+</html>
