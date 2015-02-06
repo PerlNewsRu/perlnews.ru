@@ -38,14 +38,16 @@
                     </p>
                     % }
                 </header>
-
                 % my @sections = $page->sections;
                 <%= $sections[0] %>
-
+                <p class="tags">
+                    <a href="<%= $page->path %>#disqus_thread">Комментарии</a>
+                </p><p>
                 % if ( @sections > 1 ) {
-                    <p><a href="<%= $page->path %>#section-2">Дальше &rarr;</a></p>
+                    <a href="<%= $page->path %>#section-2">Дальше &rarr;</a>
                 % }
-
+                &nbsp;
+                </p>
             </article>
             % }
         </main>
@@ -102,3 +104,14 @@
     </div>
 
 </div>
+<script type="text/javascript">
+    var disqus_shortname = 'perlnewsru';
+    if (window.location.hostname === "perlnews.ru") {
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    }
+</script>
