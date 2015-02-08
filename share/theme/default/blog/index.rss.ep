@@ -31,10 +31,10 @@
                         </a></li>
                     </ul>
                 % }
-                % else {
-                    <p><a href="<%= $site->url( $p->path ) %>#section-2">Continue reading...</a></p>
+                % elsif ( @sections > 1 ) {
+                <p><a href="<%= $site->url( $p->path ) %>#section-2">Читать дальше &rarr;</a></p>
                 % }
-                <p>Tags:
+                <p>Темы:
                 % for my $tag ( $p->tags ) {
                     <a href="<%= $tag->href %>"><%= $tag->text %></a>
                 % }
