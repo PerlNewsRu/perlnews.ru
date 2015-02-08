@@ -2,6 +2,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        % if ( $self->can('document') && ref $self->app eq 'Statocles::App::Blog' ) {
+        % my $desc = ($self->sections)[0];
+        % $desc =~ s/<.+?>//gs ;
+        % $desc =~ s/\r?\n\r?\n.+$//;
+        % $desc =~ s/[\r\n]+/ /g;
+        % $desc = substr $desc, 0, 196;
+        % $desc .= "…";
+        <meta name="twitter:card"        content="summary" />
+        <meta name="twitter:url"         content="<%= $self->app->site->base_url . $self->path %>" />
+        <meta name="twitter:title"       content="<%= $self->document->title %>" />
+        <meta name="twitter:description" content="<%= $desc %>" />
+        <meta name="twitter:site"        content="@perlnews_ru" />
+        % }
         <link rel="stylesheet" href="/theme/css/normalize.css" />
         <link rel="stylesheet" href="/theme/css/skeleton.css" />
         <link rel="stylesheet" href="/theme/css/statocles-default.css" />
