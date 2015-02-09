@@ -1,0 +1,17 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use Text::Sass::XS qw(SASS_STYLE_COMPRESSED SASS_SOURCE_COMMENTS_NONE);
+
+my $dir = 'share/theme/default';
+
+my $sass = Text::Sass::XS->new(
+    include_paths   => [],
+    image_path      => '/theme/images',
+    output_style    => SASS_STYLE_COMPRESSED,
+    source_comments => SASS_SOURCE_COMMENTS_NONE,
+);
+my $css = $sass->compile_file("$dir/sass/screen.scss");
+open my $css_fh, '>', "$dir/css/style.css" or die $!;
+print $css_fh $css;
+close $css_fh;
