@@ -1,6 +1,6 @@
 ---
 last\_modified: 2015-02-02 22:51:08
-tags: Perl6
+tags: Perl6, FOSDEM
 author: perlnews
 title: Релиз Perl6 ожидается в 2015 году
 ---

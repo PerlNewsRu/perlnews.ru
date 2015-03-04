@@ -1,6 +1,6 @@
 ---
 last\_modified: 2015-02-06 17:02:48
-tags: Perl6
+tags: Perl6, FOSDEM
 author: perlnews
 title: Интервью Ларри Уолла в подкасте rebuild.fm
 ---

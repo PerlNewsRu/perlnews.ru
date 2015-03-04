@@ -1,6 +1,6 @@
 ---
 last\_modified: 2015-02-04 00:00:41
-tags: Perl
+tags: Perl, FOSDEM
 author: perlnews
 title: Интервью Рикардо Сигнеса для подкаста rebuild.fm
 ---
