@@ -1,6 +1,6 @@
 ---
 last\_modified: 2015-04-06 22:30:57
-tags: Perl 6
+tags: Perl6
 author: perlnews
 title: WenZPerl пожертвовали 10'000 € в разработку Perl 6
 ---
