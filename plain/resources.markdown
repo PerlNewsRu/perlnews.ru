@@ -8,7 +8,7 @@
 - Программирование на Perl, 4-е издание<br>![Perl](/i/resources-book-pp.jpg) 
 - Изучаем Perl. 5-е издание<br>![Learn Perl](/i/resources-book-lp.jpg) 
 - Perl: изучаем глубже, 2-е издание<br>![Learn Perl
-  Deeper](/i/resources-book-lpdeeper.jpg) 
+  Deeper](/i/resources-book-lpdeeper.jpg)
 
 ## Рассылки
 
@@ -25,3 +25,4 @@
 - Агрегатор русскоязычных блогов о Perl [PlanetPerl.ru](http://planetperl.ru)
 - Журнал о современном Perl на русском [PragmaticPerl](http://pragmaticperl.com)
 - Активный [форум](http://forum.pragmaticperl.com), целиком посвящённый Perl
+- [Перечень](http://allperlbooks.com/language/ru) всех книг о Perl на русском языке
