@@ -1,6 +1,7 @@
 ---
 last\_modified: 2015-04-06 09:51:35
 tags: PragmaticPerl
+author: perlnews
 title: 26-й выпуск журнала Pragmatic Perl
 ---
 
