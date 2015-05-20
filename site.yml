@@ -1,7 +1,7 @@
 blog_app:
     class: Statocles::App::Blog
     args:
-        url_root: /blog
+        url_root: '/blog'
         page_size: 20
         store: 'blog'
 
