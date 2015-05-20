@@ -41,7 +41,7 @@
                 </p>
             ]]></description>
             <pubDate>
-                <%= $p->published->strftime('%a, %d %b %Y %T %z') %>
+                <%= $p->date->strftime('%a, %d %b %Y %T %z') %>
             </pubDate>
         </item>
         % }

@@ -10,9 +10,9 @@
                 % }
                 </p>
                 <aside>
-                    <p><time datetime="<%= $self->published->strftime('%Y-%m-%d') %>">
+                    <p><time datetime="<%= $self->date->strftime('%Y-%m-%d') %>">
                         <span class="typcn typcn-time"><span>
-                        <%= $self->published->strftime('%Y-%m-%d') %>
+                        <%= $self->date->strftime('%Y-%m-%d') %>
                     </time>
                     % if ( $self->author ) {
                         <span class="typcn typcn-user"><span>

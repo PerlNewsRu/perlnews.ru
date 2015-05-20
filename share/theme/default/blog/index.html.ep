@@ -18,8 +18,8 @@
                     <aside>
                     <p>        
                         <span class="typcn typcn-time"></span>
-                        <time datetime="<%= $page->published->strftime('%Y-%m-%d') %>">
-                            <%= $page->published->strftime('%Y-%m-%d') %>
+                        <time datetime="<%= $page->date->strftime('%Y-%m-%d') %>">
+                            <%= $page->date->strftime('%Y-%m-%d') %>
                         </time>
                         % if ( $page->author ) {
                             <span class="typcn typcn-user"></span>
