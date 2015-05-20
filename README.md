@@ -12,7 +12,7 @@
     $ git clone https://github.com/PerlNewsRu/perlnews.ru
     $ cd perlnews.ru
 
-Установите Statocles
+Установите Statocles (не ниже версии 0.045)
 
     $ cpanm Statocles
 
