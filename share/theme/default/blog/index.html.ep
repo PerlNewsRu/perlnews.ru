@@ -7,7 +7,7 @@
             % for my $page ( @$pages ) {
             <article>
                 <header>
-                    <h1><a href="<%= $page->path %>"><%= $page->title %></a></h1>
+                    <h1><a href="<%= $app->page_url( $page ) %>"><%= $page->title %></a></h1>
 
                     <p class="tags">Темы:
                     % for my $tag ( $page->tags ) {
@@ -41,10 +41,10 @@
                 % my @sections = $page->sections;
                 <%= $sections[0] %>
                 <p class="tags">
-                    <a href="<%= $page->path %>#disqus_thread">Комментарии</a>
+                    <a href="<%= $app->page_url( $page ) %>#disqus_thread">Комментарии</a>
                 </p><p>
                 % if ( @sections > 1 ) {
-                    <a href="<%= $page->path %>#section-2">Дальше &rarr;</a>
+                    <a href="<%= $app->page_url( $page ) %>#section-2">Дальше &rarr;</a>
                 % }
                 &nbsp;
                 </p>
