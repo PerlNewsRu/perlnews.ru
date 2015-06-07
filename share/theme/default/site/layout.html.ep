@@ -17,7 +17,12 @@
         % }
         <link href="/theme/images/favicon.ico" rel="icon">
         <link rel="stylesheet" href="/theme/css/style.css" />
-        <title><%= $site->title %></title>
+        <title>
+            <%= $site->title %>
+            % if ( $self->can('document') && ref $self->app eq 'Statocles::App::Blog' ) {
+            &rarr; <%= $self->document->title %>
+            % }
+        </title>
         % for my $link ( $self->links( 'feed' ) ) {
         <link rel="alternate" href="<%= $link->href %>" type="<%= $link->type %>" />
         % }
