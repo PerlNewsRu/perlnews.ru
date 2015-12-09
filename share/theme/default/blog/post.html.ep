@@ -23,7 +23,7 @@
                 % if ( $self->links( 'crosspost' ) ) {
                 <p>Originally posted as:
                     % for my $link ( $self->links( 'crosspost' ) ) {
-                        <a class="alert-link" href="<%= $link->href %>">
+                        <a href="<%= $link->href %>">
                             <em><%= $self->title %></em> on <%= $link->title %>.
                         </a>
                     % }

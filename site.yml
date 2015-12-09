@@ -6,13 +6,13 @@ blog_app:
         store: 'blog'
 
 plain_app:
-    class: Statocles::App::Plain
+    class: Statocles::App::Basic
     args:
         url_root: '/'
         store: 'plain'
 
 static_app:
-    class: Statocles::App::Static
+    class: Statocles::App::Basic
     args:
         url_root: '/'
         store: 'static'
@@ -39,7 +39,7 @@ site:
         deploy:
             $ref: github_deploy
         title: PerlNews.Ru
-        index: blog
+        index: /blog
         nav:
             main:
                 - title: Новости
