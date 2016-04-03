@@ -1,12 +1,12 @@
 # Полезные ресурсы
 
-## Книги для изучения 
+## Книги для изучения
 
 - Русский перевод Modern Perl. Перевод выполен Тимуром Нозадзе
   [[pod](https://github.com/timurn/modern_perl_book/tree/russian_translation/translation/ru/sections),
-  [pdf](/modern_perl_2013_ru.pdf)]<br>![Modern Perl](/i/resources-book-mp.png) 
-- Программирование на Perl, 4-е издание<br>![Perl](/i/resources-book-pp.jpg) 
-- Изучаем Perl. 5-е издание<br>![Learn Perl](/i/resources-book-lp.jpg) 
+  [pdf](/modern_perl_2013_ru.pdf)]<br>![Modern Perl](/i/resources-book-mp.png)
+- Программирование на Perl, 4-е издание<br>![Perl](/i/resources-book-pp.jpg)
+- Изучаем Perl. 5-е издание<br>![Learn Perl](/i/resources-book-lp.jpg)
 - Perl: изучаем глубже, 2-е издание<br>![Learn Perl
   Deeper](/i/resources-book-lpdeeper.jpg)
 
